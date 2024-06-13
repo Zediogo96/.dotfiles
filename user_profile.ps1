@@ -23,10 +23,16 @@ $env:GIT_SSH = "C:\Windows\system32\OpenSSH\ssh.exe"
 # Alias
 Set-Alias -Name vim -Value nvim
 Set-Alias ll ls
-Set-Alias g git
+
 Set-Alias grep findstr
 Set-Alias tig 'C:\Program Files\Git\usr\bin\tig.exe'
 Set-Alias less 'C:\Program Files\Git\usr\bin\less.exe'
+
+# Easy Git Alias
+Set-Alias g git
+
+function Get-GitCommit { & git commit -am $args }
+New-Alias -Name gc -Value Get-GitCommit -Force -Option AllScope
 
 # Utilities
 function which ($command) {
