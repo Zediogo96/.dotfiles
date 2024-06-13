@@ -29,10 +29,17 @@ Set-Alias tig 'C:\Program Files\Git\usr\bin\tig.exe'
 Set-Alias less 'C:\Program Files\Git\usr\bin\less.exe'
 
 # Easy Git Alias
-Set-Alias g git
-
 function Get-GitCommit { & git commit -am $args }
 New-Alias -Name gc -Value Get-GitCommit -Force -Option AllScope
+
+function Get-GitPush { & git push }
+New-Alias -Name gp -Value Get-GitPush -Force -Option AllScope
+
+function Get-GitPull { & git pull }
+New-Alias -Name gl -Value Get-GitPull -Force -Option AllScope
+
+function Get-GitStatus { & git status }
+New-Alias -Name gs -Value Get-GitStatus -Force -Option AllScope
 
 # Utilities
 function which ($command) {
